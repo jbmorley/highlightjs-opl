@@ -1,6 +1,6 @@
 {
   "name": "highlightjs-opl",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Psion OPL syntax highlighting plugin for highlight.js",
   "main": "src/languages/opl.js",
   "directories": {
