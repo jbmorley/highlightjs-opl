@@ -44,3 +44,8 @@ npm version 1.0.1
 > [!NOTE]
 >
 > This will not automatically commit the updated `package.json` or tag the release as this functionality has been disabled in `.npmrc` to allow for external versioning.
+
+## License
+
+OPL for Highlight.js is licensed under the MIT License (see [LICENSE](https://github.com/inseven/psion-screen-saver/blob/main/LICENSE)).
+
