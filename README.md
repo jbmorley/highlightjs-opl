@@ -35,5 +35,12 @@ This package is published on [NPM](https://npmjs.com) using:
 npm publish
 ```
 
+Setting the version can be done as follows:
 
+```shell
+npm version 1.0.1
+```
 
+> [!NOTE]
+>
+> This will not automatically commit the updated `package.json` or tag the release as this functionality has been disabled in `.npmrc` to allow for external versioning.
