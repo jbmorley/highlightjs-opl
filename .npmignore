@@ -1,4 +1,7 @@
 /.github
+/.gitmodules
+/.local
 /.npmignore
 /.tool-versions
+/build
 /scripts
