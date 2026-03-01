@@ -67,14 +67,25 @@ cd "$ROOT_DIRECTORY"
 
 # Clean up and recreate the output directories.
 if [ -d "$BUILD_DIRECTORY" ] ; then
-    rm -r "$BUILD_DIRECTORY"
+    rm -rf "$BUILD_DIRECTORY"
 fi
 mkdir -p "$BUILD_DIRECTORY"
 
-# Build.
+# Build the modules.
+
+cd "$BUILD_DIRECTORY"
+git clone --depth 1 https://github.com/highlightjs/highlight.js
+cd highlight.js
+ln -s "$ROOT_DIRECTORY" extra/highlightjs-opl
+node ./tools/build.js -t cdn
+
+# Build and test.
 
 cd "$ROOT_DIRECTORY"
 npm ci
+npm test
+
+# Release.
 
 if $RELEASE ; then
 

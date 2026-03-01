@@ -14,17 +14,8 @@ permissions:
   contents: write
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-      - run: npm ci
-      - run: npm test
 
-  publish-npm:
+  build:
 
     needs: build
     runs-on: ubuntu-latest
@@ -59,4 +50,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: |
-        scripts/release.sh
+        scripts/build.sh
