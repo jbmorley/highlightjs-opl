@@ -57,7 +57,6 @@ jobs:
     - name: Build and publish
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # RELEASE: ${{ github.ref == 'refs/heads/main' }}
-        RELEASE: true
+        RELEASE: ${{ github.ref == 'refs/heads/main' }}
       run: |
         scripts/release.sh
