@@ -29,21 +29,21 @@ Simply load this module after loading Highlight.js. You'll use the minified vers
 
 ## Development
 
-This package is published on [NPM](https://npmjs.com) using:
+Build using the build script:
 
 ```shell
-npm publish
+scripts/build.sh
 ```
 
-Setting the version can be done as follows:
+This fetches the latest highlight.js source and builds the package from within that project (see [Packaging](https://github.com/highlightjs/highlight.js/blob/main/extra/3RD_PARTY_QUICK_START.md#packaging)).
+
+To make a release, use the `--release` flag. This will update the version number, publish to NPM, and create a GitHub release if there are changes to be released:
 
 ```shell
-npm version 1.0.1
+scripts/build.sh --release
 ```
 
-> [!NOTE]
->
-> This will not automatically commit the updated `package.json` or tag the release as this functionality has been disabled in `.npmrc` to allow for external versioning.
+This step is performed automatically on GitHub main branch builds.
 
 ## License
 
