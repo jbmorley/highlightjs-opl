@@ -16,10 +16,7 @@ permissions:
 jobs:
 
   build:
-
-    needs: build
     runs-on: ubuntu-latest
-    # if: ${{ github.ref == 'refs/heads/main' }}
 
     steps:
 
