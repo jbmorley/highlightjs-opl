@@ -25,14 +25,31 @@ jobs:
       - run: npm test
 
   publish-npm:
+
     needs: build
     runs-on: ubuntu-latest
     # if: ${{ github.ref == 'refs/heads/main' }}
+
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '24'
-          registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
-      - run: npm publish
+
+    - name: Checkout required submodules
+      run: |
+        git submodule update --init --depth 1 scripts/build-tools
+        git submodule update --init --depth 1 scripts/changes
+
+    - name: Install the tool dependencies
+      uses: jdx/mise-action@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install dependencies
+      run: scripts/install-dependencies.sh
+
+    - uses: actions/setup-node@v4
+      with:
+        node-version: '24'
+        registry-url: 'https://registry.npmjs.org'
+
+    - run: |
+        npm ci
+        npm publish
