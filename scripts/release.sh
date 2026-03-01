@@ -71,13 +71,9 @@ if [ -d "$BUILD_DIRECTORY" ] ; then
 fi
 mkdir -p "$BUILD_DIRECTORY"
 
-# List the artifacts.
-find "$ARTIFACTS_DIRECTORY"
-
-# Copy the artifacts to the builds directory, adding each to the manifest.
+# Build.
 
 cd "$ROOT_DIRECTORY"
-
 npm ci
 
 if $RELEASE ; then
