@@ -55,5 +55,4 @@ jobs:
         registry-url: 'https://registry.npmjs.org'
 
     - run: |
-        npm ci
-        npm publish
+        scripts/release.sh
