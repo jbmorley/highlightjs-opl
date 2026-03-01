@@ -30,7 +30,6 @@ SCRIPTS_DIRECTORY="$ROOT_DIRECTORY/scripts"
 
 LOCAL_TOOLS_PATH="$ROOT_DIRECTORY/.local"
 CHANGES_DIRECTORY="$SCRIPTS_DIRECTORY/changes"
-BUILD_TOOLS_DIRECTORY="$SCRIPTS_DIRECTORY/build-tools"
 
 # Install tools defined in `.tool-versions`.
 cd "$ROOT_DIRECTORY"
@@ -51,4 +50,3 @@ source "$SCRIPTS_DIRECTORY/environment.sh"
 # Install the Python dependencies.
 pip install --upgrade pip pipenv wheel certifi
 PIPENV_PIPFILE="$CHANGES_DIRECTORY/Pipfile" pipenv install
-PIPENV_PIPFILE="$BUILD_TOOLS_DIRECTORY/Pipfile" pipenv install

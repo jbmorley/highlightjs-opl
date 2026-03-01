@@ -31,5 +31,3 @@ export PATH="$PYTHONUSERBASE/bin":$PATH
 export PYTHONPATH=$PYTHONUSERBASE
 
 export PATH=$PATH:"$SCRIPTS_DIRECTORY/changes"
-export PATH=$PATH:"$SCRIPTS_DIRECTORY/build-tools"
-export PATH=$PATH:"$ROOT_DIRECTORY/macos/dependencies/diligence/scripts"
