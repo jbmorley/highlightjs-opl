@@ -77,6 +77,7 @@ cd "$BUILD_DIRECTORY"
 git clone --depth 1 https://github.com/highlightjs/highlight.js
 cd highlight.js
 ln -s "$ROOT_DIRECTORY" extra/highlightjs-opl
+npm install
 node ./tools/build.js -t cdn
 
 # Build and test.
