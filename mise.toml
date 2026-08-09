@@ -1,0 +1,7 @@
+[tools]
+
+node = "24"
+python = "3.12.13"
+uv = "latest"
+
+"pipx:changes-semver" = "6"
