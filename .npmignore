@@ -1,5 +1,6 @@
 /.github
 /.npmignore
 /build
+/.mise
 /mise.toml
 /scripts
